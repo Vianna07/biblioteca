@@ -1,9 +1,8 @@
 #!/bin/bash
-# dump.sh - Faz o dump do banco biblioteca e salva na raiz do projeto
+# dump.sh - Faz o dump do banco biblioteca
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
-docker exec mariadb_lib mariadb-dump -u root -p"$(docker exec mariadb_lib printenv MARIADB_ROOT_PASSWORD)" --databases biblioteca > "$PROJECT_ROOT/database.sql"
+docker exec mariadb_lib mariadb-dump -u root -p"$(docker exec mariadb_lib printenv MARIADB_ROOT_PASSWORD)" --databases biblioteca > "$SCRIPT_DIR/dump/database.sql"
 
-echo "Dump realizado com sucesso em $PROJECT_ROOT/database.sql"
+echo "Dump realizado com sucesso em $SCRIPT_DIR/dump/database.sql"

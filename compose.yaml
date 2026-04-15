@@ -9,7 +9,6 @@ services:
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./scripts:/scripts:z
-      - ./:/dump:ro,z
       - ./scripts/init.sh:/docker-entrypoint-initdb.d/init.sh:z
 
 volumes:
