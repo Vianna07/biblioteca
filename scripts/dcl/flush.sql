@@ -1,1 +1,3 @@
+USE biblioteca;
+
 FLUSH PRIVILEGES;

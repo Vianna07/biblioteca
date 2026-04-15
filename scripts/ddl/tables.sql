@@ -1,3 +1,5 @@
+USE biblioteca;
+
 CREATE TABLE livros (
     id_livro UUID PRIMARY KEY DEFAULT UUID(),
     titulo VARCHAR(255) NOT NULL,
