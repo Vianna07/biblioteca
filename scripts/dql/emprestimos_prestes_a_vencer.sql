@@ -3,7 +3,7 @@ USE biblioteca;
 -- Empréstimos que vencem hoje ou amanhã
 SELECT
     u.nome AS usuario,
-    u.login,
+    u.email,
     l.titulo AS livro,
     e.data_devolucao_prevista
 FROM emprestimos e

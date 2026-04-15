@@ -5,14 +5,13 @@ CREATE TABLE livros (
     titulo VARCHAR(255) NOT NULL,
     autor VARCHAR(100) NOT NULL,
     editora VARCHAR(100),
-    ano_lancamento INT,
-    isbn VARCHAR(20) UNIQUE
+    ano_lancamento INT
 );
 
 CREATE TABLE usuarios (
     id_usuario UUID PRIMARY KEY DEFAULT UUID(),
     nome VARCHAR(100) NOT NULL,
-    login VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL
 );
 
