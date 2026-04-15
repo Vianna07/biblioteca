@@ -17,6 +17,14 @@
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
+-- Current Database: `biblioteca`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `biblioteca` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_uca1400_ai_ci */;
+
+USE `biblioteca`;
+
+--
 -- Table structure for table `emprestimos`
 --
 
@@ -47,46 +55,46 @@ CREATE TABLE `emprestimos` (
 LOCK TABLES `emprestimos` WRITE;
 /*!40000 ALTER TABLE `emprestimos` DISABLE KEYS */;
 INSERT INTO `emprestimos` VALUES
-('ec51567c-391f-11f1-882f-e268fd616e52','ec5083ef-391f-11f1-882f-e268fd616e52','ec4f988e-391f-11f1-882f-e268fd616e52','2026-01-10','2026-01-24','2026-01-20','devolvido'),
-('ec5158b0-391f-11f1-882f-e268fd616e52','ec508511-391f-11f1-882f-e268fd616e52','ec4f9a01-391f-11f1-882f-e268fd616e52','2026-01-15','2026-01-29','2026-01-28','devolvido'),
-('ec51592a-391f-11f1-882f-e268fd616e52','ec508565-391f-11f1-882f-e268fd616e52','ec4f9a6f-391f-11f1-882f-e268fd616e52','2026-02-01','2026-02-15','2026-02-10','devolvido'),
-('ec515964-391f-11f1-882f-e268fd616e52','ec5085ac-391f-11f1-882f-e268fd616e52','ec4f9ab1-391f-11f1-882f-e268fd616e52','2026-02-05','2026-02-19','2026-02-18','devolvido'),
-('ec5159a1-391f-11f1-882f-e268fd616e52','ec5085ce-391f-11f1-882f-e268fd616e52','ec4f9adb-391f-11f1-882f-e268fd616e52','2026-02-10','2026-02-24','2026-02-22','devolvido'),
-('ec51dc5f-391f-11f1-882f-e268fd616e52','ec5085ed-391f-11f1-882f-e268fd616e52','ec4f9b03-391f-11f1-882f-e268fd616e52','2026-01-05','2026-01-19','2026-02-01','devolvido'),
-('ec51dd53-391f-11f1-882f-e268fd616e52','ec508602-391f-11f1-882f-e268fd616e52','ec4f9b29-391f-11f1-882f-e268fd616e52','2026-01-20','2026-02-03','2026-02-15','devolvido'),
-('ec51dd84-391f-11f1-882f-e268fd616e52','ec508619-391f-11f1-882f-e268fd616e52','ec4f9b50-391f-11f1-882f-e268fd616e52','2026-02-01','2026-02-15','2026-03-01','devolvido'),
-('ec51ddbc-391f-11f1-882f-e268fd616e52','ec508634-391f-11f1-882f-e268fd616e52','ec4f9b74-391f-11f1-882f-e268fd616e52','2026-02-10','2026-02-24','2026-03-05','devolvido'),
-('ec51dde3-391f-11f1-882f-e268fd616e52','ec50865a-391f-11f1-882f-e268fd616e52','ec4f988e-391f-11f1-882f-e268fd616e52','2026-02-15','2026-03-01','2026-03-10','devolvido'),
-('ec52593c-391f-11f1-882f-e268fd616e52','ec5086a0-391f-11f1-882f-e268fd616e52','ec4f9a01-391f-11f1-882f-e268fd616e52','2026-04-10','2026-04-24',NULL,'pendente'),
-('ec525a52-391f-11f1-882f-e268fd616e52','ec5086b4-391f-11f1-882f-e268fd616e52','ec4f9a6f-391f-11f1-882f-e268fd616e52','2026-04-08','2026-04-22',NULL,'pendente'),
-('ec525a8b-391f-11f1-882f-e268fd616e52','ec5086c9-391f-11f1-882f-e268fd616e52','ec4f9a8f-391f-11f1-882f-e268fd616e52','2026-04-05','2026-04-19',NULL,'pendente'),
-('ec525ab9-391f-11f1-882f-e268fd616e52','ec5086db-391f-11f1-882f-e268fd616e52','ec4f9ab1-391f-11f1-882f-e268fd616e52','2026-04-12','2026-04-26',NULL,'pendente'),
-('ec525ae6-391f-11f1-882f-e268fd616e52','ec5086ef-391f-11f1-882f-e268fd616e52','ec4f9adb-391f-11f1-882f-e268fd616e52','2026-04-11','2026-04-25',NULL,'pendente'),
-('ec525b13-391f-11f1-882f-e268fd616e52','ec508702-391f-11f1-882f-e268fd616e52','ec4f9b03-391f-11f1-882f-e268fd616e52','2026-04-09','2026-04-23',NULL,'pendente'),
-('ec525b40-391f-11f1-882f-e268fd616e52','ec508715-391f-11f1-882f-e268fd616e52','ec4f9b29-391f-11f1-882f-e268fd616e52','2026-04-13','2026-04-27',NULL,'pendente'),
-('ec525b6d-391f-11f1-882f-e268fd616e52','ec508728-391f-11f1-882f-e268fd616e52','ec4f9b50-391f-11f1-882f-e268fd616e52','2026-04-07','2026-04-21',NULL,'pendente'),
-('ec525b9b-391f-11f1-882f-e268fd616e52','ec50873c-391f-11f1-882f-e268fd616e52','ec4f9b74-391f-11f1-882f-e268fd616e52','2026-04-14','2026-04-28',NULL,'pendente'),
-('ec525bc7-391f-11f1-882f-e268fd616e52','ec50874f-391f-11f1-882f-e268fd616e52','ec4f988e-391f-11f1-882f-e268fd616e52','2026-04-06','2026-04-20',NULL,'pendente'),
-('ec52cd5f-391f-11f1-882f-e268fd616e52','ec508762-391f-11f1-882f-e268fd616e52','ec4f9a01-391f-11f1-882f-e268fd616e52','2026-03-01','2026-03-15',NULL,'atrasado'),
-('ec52ce67-391f-11f1-882f-e268fd616e52','ec508776-391f-11f1-882f-e268fd616e52','ec4f9a6f-391f-11f1-882f-e268fd616e52','2026-03-05','2026-03-19',NULL,'atrasado'),
-('ec52ce97-391f-11f1-882f-e268fd616e52','ec50878b-391f-11f1-882f-e268fd616e52','ec4f9a8f-391f-11f1-882f-e268fd616e52','2026-03-10','2026-03-24',NULL,'atrasado'),
-('ec52cebe-391f-11f1-882f-e268fd616e52','ec50879d-391f-11f1-882f-e268fd616e52','ec4f9ab1-391f-11f1-882f-e268fd616e52','2026-03-02','2026-03-16',NULL,'atrasado'),
-('ec52cee7-391f-11f1-882f-e268fd616e52','ec5087b0-391f-11f1-882f-e268fd616e52','ec4f9adb-391f-11f1-882f-e268fd616e52','2026-03-08','2026-03-22',NULL,'atrasado'),
-('ec52cf0d-391f-11f1-882f-e268fd616e52','ec5087c3-391f-11f1-882f-e268fd616e52','ec4f9b03-391f-11f1-882f-e268fd616e52','2026-03-12','2026-03-26',NULL,'atrasado'),
-('ec52cf35-391f-11f1-882f-e268fd616e52','ec5087d6-391f-11f1-882f-e268fd616e52','ec4f9b29-391f-11f1-882f-e268fd616e52','2026-03-03','2026-03-17',NULL,'atrasado'),
-('ec52cf5b-391f-11f1-882f-e268fd616e52','ec5087e9-391f-11f1-882f-e268fd616e52','ec4f9b50-391f-11f1-882f-e268fd616e52','2026-03-07','2026-03-21',NULL,'atrasado'),
-('ec52cf82-391f-11f1-882f-e268fd616e52','ec5087fc-391f-11f1-882f-e268fd616e52','ec4f9b74-391f-11f1-882f-e268fd616e52','2026-03-15','2026-03-29',NULL,'atrasado'),
-('ec52cfa9-391f-11f1-882f-e268fd616e52','ec50858b-391f-11f1-882f-e268fd616e52','ec4f988e-391f-11f1-882f-e268fd616e52','2026-03-20','2026-04-03',NULL,'atrasado'),
-('ec533671-391f-11f1-882f-e268fd616e52','ec5083ef-391f-11f1-882f-e268fd616e52','ec4f9a8f-391f-11f1-882f-e268fd616e52','2026-04-01','2026-04-16',NULL,'pendente'),
-('ec533777-391f-11f1-882f-e268fd616e52','ec508511-391f-11f1-882f-e268fd616e52','ec4f9ab1-391f-11f1-882f-e268fd616e52','2026-04-02','2026-04-17',NULL,'pendente'),
-('ec5337af-391f-11f1-882f-e268fd616e52','ec508565-391f-11f1-882f-e268fd616e52','ec4f9adb-391f-11f1-882f-e268fd616e52','2026-04-03','2026-04-16',NULL,'pendente'),
-('ec5337e3-391f-11f1-882f-e268fd616e52','ec5085ac-391f-11f1-882f-e268fd616e52','ec4f9b03-391f-11f1-882f-e268fd616e52','2026-04-01','2026-04-15',NULL,'pendente'),
-('ec533819-391f-11f1-882f-e268fd616e52','ec5085ce-391f-11f1-882f-e268fd616e52','ec4f9b29-391f-11f1-882f-e268fd616e52','2026-04-02','2026-04-18',NULL,'pendente'),
-('ec53b011-391f-11f1-882f-e268fd616e52','ec50879d-391f-11f1-882f-e268fd616e52','ec4f9b50-391f-11f1-882f-e268fd616e52','2025-12-01','2025-12-15','2025-12-14','devolvido'),
-('ec53b122-391f-11f1-882f-e268fd616e52','ec5087b0-391f-11f1-882f-e268fd616e52','ec4f9b74-391f-11f1-882f-e268fd616e52','2025-12-05','2025-12-19','2025-12-18','devolvido'),
-('ec53b151-391f-11f1-882f-e268fd616e52','ec5087c3-391f-11f1-882f-e268fd616e52','ec4f988e-391f-11f1-882f-e268fd616e52','2025-12-10','2025-12-24','2025-12-23','devolvido'),
-('ec53b17c-391f-11f1-882f-e268fd616e52','ec5087d6-391f-11f1-882f-e268fd616e52','ec4f9a01-391f-11f1-882f-e268fd616e52','2025-12-15','2025-12-29','2025-12-28','devolvido'),
-('ec53b1aa-391f-11f1-882f-e268fd616e52','ec5087e9-391f-11f1-882f-e268fd616e52','ec4f9a6f-391f-11f1-882f-e268fd616e52','2025-12-20','2026-01-03','2026-01-02','devolvido');
+('1c843f7d-3921-11f1-9245-c227c1f33aaa','1c83467e-3921-11f1-9245-c227c1f33aaa','1c825021-3921-11f1-9245-c227c1f33aaa','2026-01-10','2026-01-24','2026-01-20','devolvido'),
+('1c8440ca-3921-11f1-9245-c227c1f33aaa','1c8347f1-3921-11f1-9245-c227c1f33aaa','1c825192-3921-11f1-9245-c227c1f33aaa','2026-01-15','2026-01-29','2026-01-28','devolvido'),
+('1c844133-3921-11f1-9245-c227c1f33aaa','1c834857-3921-11f1-9245-c227c1f33aaa','1c8251fc-3921-11f1-9245-c227c1f33aaa','2026-02-01','2026-02-15','2026-02-10','devolvido'),
+('1c84415d-3921-11f1-9245-c227c1f33aaa','1c83488d-3921-11f1-9245-c227c1f33aaa','1c825238-3921-11f1-9245-c227c1f33aaa','2026-02-05','2026-02-19','2026-02-18','devolvido'),
+('1c844187-3921-11f1-9245-c227c1f33aaa','1c8348a5-3921-11f1-9245-c227c1f33aaa','1c825259-3921-11f1-9245-c227c1f33aaa','2026-02-10','2026-02-24','2026-02-22','devolvido'),
+('1c84bfc2-3921-11f1-9245-c227c1f33aaa','1c8348bb-3921-11f1-9245-c227c1f33aaa','1c825274-3921-11f1-9245-c227c1f33aaa','2026-01-05','2026-01-19','2026-02-01','devolvido'),
+('1c84c126-3921-11f1-9245-c227c1f33aaa','1c8348ce-3921-11f1-9245-c227c1f33aaa','1c82528d-3921-11f1-9245-c227c1f33aaa','2026-01-20','2026-02-03','2026-02-15','devolvido'),
+('1c84c152-3921-11f1-9245-c227c1f33aaa','1c8348e4-3921-11f1-9245-c227c1f33aaa','1c8252a9-3921-11f1-9245-c227c1f33aaa','2026-02-01','2026-02-15','2026-03-01','devolvido'),
+('1c84c17d-3921-11f1-9245-c227c1f33aaa','1c8348f7-3921-11f1-9245-c227c1f33aaa','1c8252c2-3921-11f1-9245-c227c1f33aaa','2026-02-10','2026-02-24','2026-03-05','devolvido'),
+('1c84c1a3-3921-11f1-9245-c227c1f33aaa','1c83490c-3921-11f1-9245-c227c1f33aaa','1c825021-3921-11f1-9245-c227c1f33aaa','2026-02-15','2026-03-01','2026-03-10','devolvido'),
+('1c856fcc-3921-11f1-9245-c227c1f33aaa','1c834920-3921-11f1-9245-c227c1f33aaa','1c825192-3921-11f1-9245-c227c1f33aaa','2026-04-10','2026-04-24',NULL,'pendente'),
+('1c857291-3921-11f1-9245-c227c1f33aaa','1c834934-3921-11f1-9245-c227c1f33aaa','1c8251fc-3921-11f1-9245-c227c1f33aaa','2026-04-08','2026-04-22',NULL,'pendente'),
+('1c8572ec-3921-11f1-9245-c227c1f33aaa','1c834946-3921-11f1-9245-c227c1f33aaa','1c82521a-3921-11f1-9245-c227c1f33aaa','2026-04-05','2026-04-19',NULL,'pendente'),
+('1c85733e-3921-11f1-9245-c227c1f33aaa','1c83495c-3921-11f1-9245-c227c1f33aaa','1c825238-3921-11f1-9245-c227c1f33aaa','2026-04-12','2026-04-26',NULL,'pendente'),
+('1c85738e-3921-11f1-9245-c227c1f33aaa','1c834970-3921-11f1-9245-c227c1f33aaa','1c825259-3921-11f1-9245-c227c1f33aaa','2026-04-11','2026-04-25',NULL,'pendente'),
+('1c8573d2-3921-11f1-9245-c227c1f33aaa','1c834983-3921-11f1-9245-c227c1f33aaa','1c825274-3921-11f1-9245-c227c1f33aaa','2026-04-09','2026-04-23',NULL,'pendente'),
+('1c85741b-3921-11f1-9245-c227c1f33aaa','1c834997-3921-11f1-9245-c227c1f33aaa','1c82528d-3921-11f1-9245-c227c1f33aaa','2026-04-13','2026-04-27',NULL,'pendente'),
+('1c857462-3921-11f1-9245-c227c1f33aaa','1c8349ab-3921-11f1-9245-c227c1f33aaa','1c8252a9-3921-11f1-9245-c227c1f33aaa','2026-04-07','2026-04-21',NULL,'pendente'),
+('1c8574b5-3921-11f1-9245-c227c1f33aaa','1c8349c3-3921-11f1-9245-c227c1f33aaa','1c8252c2-3921-11f1-9245-c227c1f33aaa','2026-04-14','2026-04-28',NULL,'pendente'),
+('1c857503-3921-11f1-9245-c227c1f33aaa','1c8349ee-3921-11f1-9245-c227c1f33aaa','1c825021-3921-11f1-9245-c227c1f33aaa','2026-04-06','2026-04-20',NULL,'pendente'),
+('1c860d6a-3921-11f1-9245-c227c1f33aaa','1c834a49-3921-11f1-9245-c227c1f33aaa','1c825192-3921-11f1-9245-c227c1f33aaa','2026-03-01','2026-03-15',NULL,'atrasado'),
+('1c860fab-3921-11f1-9245-c227c1f33aaa','1c834a5f-3921-11f1-9245-c227c1f33aaa','1c8251fc-3921-11f1-9245-c227c1f33aaa','2026-03-05','2026-03-19',NULL,'atrasado'),
+('1c860fd8-3921-11f1-9245-c227c1f33aaa','1c834a74-3921-11f1-9245-c227c1f33aaa','1c82521a-3921-11f1-9245-c227c1f33aaa','2026-03-10','2026-03-24',NULL,'atrasado'),
+('1c861005-3921-11f1-9245-c227c1f33aaa','1c834a8a-3921-11f1-9245-c227c1f33aaa','1c825238-3921-11f1-9245-c227c1f33aaa','2026-03-02','2026-03-16',NULL,'atrasado'),
+('1c861035-3921-11f1-9245-c227c1f33aaa','1c834aa0-3921-11f1-9245-c227c1f33aaa','1c825259-3921-11f1-9245-c227c1f33aaa','2026-03-08','2026-03-22',NULL,'atrasado'),
+('1c86105c-3921-11f1-9245-c227c1f33aaa','1c834ab3-3921-11f1-9245-c227c1f33aaa','1c825274-3921-11f1-9245-c227c1f33aaa','2026-03-12','2026-03-26',NULL,'atrasado'),
+('1c861084-3921-11f1-9245-c227c1f33aaa','1c834ac6-3921-11f1-9245-c227c1f33aaa','1c82528d-3921-11f1-9245-c227c1f33aaa','2026-03-03','2026-03-17',NULL,'atrasado'),
+('1c8610ab-3921-11f1-9245-c227c1f33aaa','1c834ad9-3921-11f1-9245-c227c1f33aaa','1c8252a9-3921-11f1-9245-c227c1f33aaa','2026-03-07','2026-03-21',NULL,'atrasado'),
+('1c8610d3-3921-11f1-9245-c227c1f33aaa','1c834aee-3921-11f1-9245-c227c1f33aaa','1c8252c2-3921-11f1-9245-c227c1f33aaa','2026-03-15','2026-03-29',NULL,'atrasado'),
+('1c8610fb-3921-11f1-9245-c227c1f33aaa','1c834874-3921-11f1-9245-c227c1f33aaa','1c825021-3921-11f1-9245-c227c1f33aaa','2026-03-20','2026-04-03',NULL,'atrasado'),
+('1c86a60f-3921-11f1-9245-c227c1f33aaa','1c83467e-3921-11f1-9245-c227c1f33aaa','1c82521a-3921-11f1-9245-c227c1f33aaa','2026-04-01','2026-04-16',NULL,'pendente'),
+('1c86a770-3921-11f1-9245-c227c1f33aaa','1c8347f1-3921-11f1-9245-c227c1f33aaa','1c825238-3921-11f1-9245-c227c1f33aaa','2026-04-02','2026-04-17',NULL,'pendente'),
+('1c86a7a0-3921-11f1-9245-c227c1f33aaa','1c834857-3921-11f1-9245-c227c1f33aaa','1c825259-3921-11f1-9245-c227c1f33aaa','2026-04-03','2026-04-16',NULL,'pendente'),
+('1c86a7cb-3921-11f1-9245-c227c1f33aaa','1c83488d-3921-11f1-9245-c227c1f33aaa','1c825274-3921-11f1-9245-c227c1f33aaa','2026-04-01','2026-04-15',NULL,'pendente'),
+('1c86a7fc-3921-11f1-9245-c227c1f33aaa','1c8348a5-3921-11f1-9245-c227c1f33aaa','1c82528d-3921-11f1-9245-c227c1f33aaa','2026-04-02','2026-04-18',NULL,'pendente'),
+('1c8726cb-3921-11f1-9245-c227c1f33aaa','1c834a8a-3921-11f1-9245-c227c1f33aaa','1c8252a9-3921-11f1-9245-c227c1f33aaa','2025-12-01','2025-12-15','2025-12-14','devolvido'),
+('1c872824-3921-11f1-9245-c227c1f33aaa','1c834aa0-3921-11f1-9245-c227c1f33aaa','1c8252c2-3921-11f1-9245-c227c1f33aaa','2025-12-05','2025-12-19','2025-12-18','devolvido'),
+('1c872858-3921-11f1-9245-c227c1f33aaa','1c834ab3-3921-11f1-9245-c227c1f33aaa','1c825021-3921-11f1-9245-c227c1f33aaa','2025-12-10','2025-12-24','2025-12-23','devolvido'),
+('1c872884-3921-11f1-9245-c227c1f33aaa','1c834ac6-3921-11f1-9245-c227c1f33aaa','1c825192-3921-11f1-9245-c227c1f33aaa','2025-12-15','2025-12-29','2025-12-28','devolvido'),
+('1c8728b5-3921-11f1-9245-c227c1f33aaa','1c834ad9-3921-11f1-9245-c227c1f33aaa','1c8251fc-3921-11f1-9245-c227c1f33aaa','2025-12-20','2026-01-03','2026-01-02','devolvido');
 /*!40000 ALTER TABLE `emprestimos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,36 +124,36 @@ CREATE TABLE `livros` (
 LOCK TABLES `livros` WRITE;
 /*!40000 ALTER TABLE `livros` DISABLE KEYS */;
 INSERT INTO `livros` VALUES
-('ec5083ef-391f-11f1-882f-e268fd616e52','Dom Casmurro','Machado de Assis','Garnier',1899,'978-85-7232-001-1'),
-('ec508511-391f-11f1-882f-e268fd616e52','Grande Sertão: Veredas','Guimarães Rosa','José Olympio',1956,'978-85-7232-002-8'),
-('ec508565-391f-11f1-882f-e268fd616e52','Memórias Póstumas de Brás Cubas','Machado de Assis','Tipografia Nacional',1881,'978-85-7232-003-5'),
-('ec50858b-391f-11f1-882f-e268fd616e52','O Cortiço','Aluísio Azevedo','B. L. Garnier',1890,'978-85-7232-004-2'),
-('ec5085ac-391f-11f1-882f-e268fd616e52','Capitães da Areia','Jorge Amado','José Olympio',1937,'978-85-7232-005-9'),
-('ec5085ce-391f-11f1-882f-e268fd616e52','Vidas Secas','Graciliano Ramos','José Olympio',1938,'978-85-7232-006-6'),
-('ec5085ed-391f-11f1-882f-e268fd616e52','A Hora da Estrela','Clarice Lispector','José Olympio',1977,'978-85-7232-007-3'),
-('ec508602-391f-11f1-882f-e268fd616e52','O Alienista','Machado de Assis','Garnier',1882,'978-85-7232-008-0'),
-('ec508619-391f-11f1-882f-e268fd616e52','Iracema','José de Alencar','Tipografia Viana',1865,'978-85-7232-009-7'),
-('ec508634-391f-11f1-882f-e268fd616e52','Macunaíma','Mário de Andrade','Oficinas Gráficas',1928,'978-85-7232-010-3'),
-('ec50865a-391f-11f1-882f-e268fd616e52','O Tempo e o Vento','Erico Verissimo','Globo',1949,'978-85-7232-011-0'),
-('ec5086a0-391f-11f1-882f-e268fd616e52','Quincas Borba','Machado de Assis','Garnier',1891,'978-85-7232-012-7'),
-('ec5086b4-391f-11f1-882f-e268fd616e52','Menino de Engenho','José Lins do Rego','José Olympio',1932,'978-85-7232-013-4'),
-('ec5086c9-391f-11f1-882f-e268fd616e52','Gabriela, Cravo e Canela','Jorge Amado','Martins',1958,'978-85-7232-014-1'),
-('ec5086db-391f-11f1-882f-e268fd616e52','São Bernardo','Graciliano Ramos','Ariel',1934,'978-85-7232-015-8'),
-('ec5086ef-391f-11f1-882f-e268fd616e52','A Moreninha','Joaquim Manuel de Macedo','Tipografia Francesa',1844,'978-85-7232-016-5'),
-('ec508702-391f-11f1-882f-e268fd616e52','O Guarani','José de Alencar','Empresa Nacional',1857,'978-85-7232-017-2'),
-('ec508715-391f-11f1-882f-e268fd616e52','Clara dos Anjos','Lima Barreto','Mérito',1948,'978-85-7232-018-9'),
-('ec508728-391f-11f1-882f-e268fd616e52','Triste Fim de Policarpo Quaresma','Lima Barreto','Tipografia do Jornal',1915,'978-85-7232-019-6'),
-('ec50873c-391f-11f1-882f-e268fd616e52','A Paixão Segundo G.H.','Clarice Lispector','Editora do Autor',1964,'978-85-7232-020-2'),
-('ec50874f-391f-11f1-882f-e268fd616e52','Lavoura Arcaica','Raduan Nassar','José Olympio',1975,'978-85-7232-021-9'),
-('ec508762-391f-11f1-882f-e268fd616e52','Angústia','Graciliano Ramos','José Olympio',1936,'978-85-7232-022-6'),
-('ec508776-391f-11f1-882f-e268fd616e52','Memórias de um Sargento de Milícias','Manuel Antônio de Almeida','Tipografia Nacional',1854,'978-85-7232-023-3'),
-('ec50878b-391f-11f1-882f-e268fd616e52','O Quinze','Rachel de Queiroz','Editora Olympio',1930,'978-85-7232-024-0'),
-('ec50879d-391f-11f1-882f-e268fd616e52','Sagarana','Guimarães Rosa','Universal',1946,'978-85-7232-025-7'),
-('ec5087b0-391f-11f1-882f-e268fd616e52','Fogo Morto','José Lins do Rego','José Olympio',1943,'978-85-7232-026-4'),
-('ec5087c3-391f-11f1-882f-e268fd616e52','Dona Flor e Seus Dois Maridos','Jorge Amado','Martins',1966,'978-85-7232-027-1'),
-('ec5087d6-391f-11f1-882f-e268fd616e52','Olhai os Lírios do Campo','Erico Verissimo','Globo',1938,'978-85-7232-028-8'),
-('ec5087e9-391f-11f1-882f-e268fd616e52','Noite na Taverna','Álvares de Azevedo','Garnier',1855,'978-85-7232-029-5'),
-('ec5087fc-391f-11f1-882f-e268fd616e52','Dois Irmãos','Milton Hatoum','Companhia das Letras',2000,'978-85-7232-030-1');
+('1c83467e-3921-11f1-9245-c227c1f33aaa','Dom Casmurro','Machado de Assis','Garnier',1899,'978-85-7232-001-1'),
+('1c8347f1-3921-11f1-9245-c227c1f33aaa','Grande Sertão: Veredas','Guimarães Rosa','José Olympio',1956,'978-85-7232-002-8'),
+('1c834857-3921-11f1-9245-c227c1f33aaa','Memórias Póstumas de Brás Cubas','Machado de Assis','Tipografia Nacional',1881,'978-85-7232-003-5'),
+('1c834874-3921-11f1-9245-c227c1f33aaa','O Cortiço','Aluísio Azevedo','B. L. Garnier',1890,'978-85-7232-004-2'),
+('1c83488d-3921-11f1-9245-c227c1f33aaa','Capitães da Areia','Jorge Amado','José Olympio',1937,'978-85-7232-005-9'),
+('1c8348a5-3921-11f1-9245-c227c1f33aaa','Vidas Secas','Graciliano Ramos','José Olympio',1938,'978-85-7232-006-6'),
+('1c8348bb-3921-11f1-9245-c227c1f33aaa','A Hora da Estrela','Clarice Lispector','José Olympio',1977,'978-85-7232-007-3'),
+('1c8348ce-3921-11f1-9245-c227c1f33aaa','O Alienista','Machado de Assis','Garnier',1882,'978-85-7232-008-0'),
+('1c8348e4-3921-11f1-9245-c227c1f33aaa','Iracema','José de Alencar','Tipografia Viana',1865,'978-85-7232-009-7'),
+('1c8348f7-3921-11f1-9245-c227c1f33aaa','Macunaíma','Mário de Andrade','Oficinas Gráficas',1928,'978-85-7232-010-3'),
+('1c83490c-3921-11f1-9245-c227c1f33aaa','O Tempo e o Vento','Erico Verissimo','Globo',1949,'978-85-7232-011-0'),
+('1c834920-3921-11f1-9245-c227c1f33aaa','Quincas Borba','Machado de Assis','Garnier',1891,'978-85-7232-012-7'),
+('1c834934-3921-11f1-9245-c227c1f33aaa','Menino de Engenho','José Lins do Rego','José Olympio',1932,'978-85-7232-013-4'),
+('1c834946-3921-11f1-9245-c227c1f33aaa','Gabriela, Cravo e Canela','Jorge Amado','Martins',1958,'978-85-7232-014-1'),
+('1c83495c-3921-11f1-9245-c227c1f33aaa','São Bernardo','Graciliano Ramos','Ariel',1934,'978-85-7232-015-8'),
+('1c834970-3921-11f1-9245-c227c1f33aaa','A Moreninha','Joaquim Manuel de Macedo','Tipografia Francesa',1844,'978-85-7232-016-5'),
+('1c834983-3921-11f1-9245-c227c1f33aaa','O Guarani','José de Alencar','Empresa Nacional',1857,'978-85-7232-017-2'),
+('1c834997-3921-11f1-9245-c227c1f33aaa','Clara dos Anjos','Lima Barreto','Mérito',1948,'978-85-7232-018-9'),
+('1c8349ab-3921-11f1-9245-c227c1f33aaa','Triste Fim de Policarpo Quaresma','Lima Barreto','Tipografia do Jornal',1915,'978-85-7232-019-6'),
+('1c8349c3-3921-11f1-9245-c227c1f33aaa','A Paixão Segundo G.H.','Clarice Lispector','Editora do Autor',1964,'978-85-7232-020-2'),
+('1c8349ee-3921-11f1-9245-c227c1f33aaa','Lavoura Arcaica','Raduan Nassar','José Olympio',1975,'978-85-7232-021-9'),
+('1c834a49-3921-11f1-9245-c227c1f33aaa','Angústia','Graciliano Ramos','José Olympio',1936,'978-85-7232-022-6'),
+('1c834a5f-3921-11f1-9245-c227c1f33aaa','Memórias de um Sargento de Milícias','Manuel Antônio de Almeida','Tipografia Nacional',1854,'978-85-7232-023-3'),
+('1c834a74-3921-11f1-9245-c227c1f33aaa','O Quinze','Rachel de Queiroz','Editora Olympio',1930,'978-85-7232-024-0'),
+('1c834a8a-3921-11f1-9245-c227c1f33aaa','Sagarana','Guimarães Rosa','Universal',1946,'978-85-7232-025-7'),
+('1c834aa0-3921-11f1-9245-c227c1f33aaa','Fogo Morto','José Lins do Rego','José Olympio',1943,'978-85-7232-026-4'),
+('1c834ab3-3921-11f1-9245-c227c1f33aaa','Dona Flor e Seus Dois Maridos','Jorge Amado','Martins',1966,'978-85-7232-027-1'),
+('1c834ac6-3921-11f1-9245-c227c1f33aaa','Olhai os Lírios do Campo','Erico Verissimo','Globo',1938,'978-85-7232-028-8'),
+('1c834ad9-3921-11f1-9245-c227c1f33aaa','Noite na Taverna','Álvares de Azevedo','Garnier',1855,'978-85-7232-029-5'),
+('1c834aee-3921-11f1-9245-c227c1f33aaa','Dois Irmãos','Milton Hatoum','Companhia das Letras',2000,'978-85-7232-030-1');
 /*!40000 ALTER TABLE `livros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,16 +181,16 @@ CREATE TABLE `usuarios` (
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` VALUES
-('ec4f988e-391f-11f1-882f-e268fd616e52','Ana Clara Silva','ana.silva','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9a01-391f-11f1-882f-e268fd616e52','Bruno Oliveira','bruno.oliveira','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9a6f-391f-11f1-882f-e268fd616e52','Carla Mendes','carla.mendes','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9a8f-391f-11f1-882f-e268fd616e52','Daniel Souza','daniel.souza','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9ab1-391f-11f1-882f-e268fd616e52','Elena Ferreira','elena.ferreira','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9adb-391f-11f1-882f-e268fd616e52','Felipe Santos','felipe.santos','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9b03-391f-11f1-882f-e268fd616e52','Gabriela Lima','gabriela.lima','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9b29-391f-11f1-882f-e268fd616e52','Hugo Pereira','hugo.pereira','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9b50-391f-11f1-882f-e268fd616e52','Isabela Costa','isabela.costa','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
-('ec4f9b74-391f-11f1-882f-e268fd616e52','João Almeida','joao.almeida','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251');
+('1c825021-3921-11f1-9245-c227c1f33aaa','Ana Clara Silva','ana.silva','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c825192-3921-11f1-9245-c227c1f33aaa','Bruno Oliveira','bruno.oliveira','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c8251fc-3921-11f1-9245-c227c1f33aaa','Carla Mendes','carla.mendes','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c82521a-3921-11f1-9245-c227c1f33aaa','Daniel Souza','daniel.souza','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c825238-3921-11f1-9245-c227c1f33aaa','Elena Ferreira','elena.ferreira','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c825259-3921-11f1-9245-c227c1f33aaa','Felipe Santos','felipe.santos','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c825274-3921-11f1-9245-c227c1f33aaa','Gabriela Lima','gabriela.lima','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c82528d-3921-11f1-9245-c227c1f33aaa','Hugo Pereira','hugo.pereira','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c8252a9-3921-11f1-9245-c227c1f33aaa','Isabela Costa','isabela.costa','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'),
+('1c8252c2-3921-11f1-9245-c227c1f33aaa','João Almeida','joao.almeida','55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -195,4 +203,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-04-15 23:07:55
+-- Dump completed on 2026-04-15 23:17:39
