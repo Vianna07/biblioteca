@@ -1,16 +1,16 @@
 USE biblioteca;
 
 -- ============================================================
--- Funções Numéricas
+-- Funcoes Numericas
 -- ============================================================
 
 -- COUNT: total de livros no acervo
 SELECT COUNT(*) AS total_livros FROM livros;
 
--- COUNT: total de usuários cadastrados
+-- COUNT: total de usuarios cadastrados
 SELECT COUNT(*) AS total_usuarios FROM usuarios;
 
--- COUNT: total de empréstimos por status
+-- COUNT: total de emprestimos por status
 SELECT status, COUNT(*) AS total
 FROM emprestimos
 GROUP BY status
@@ -19,17 +19,21 @@ ORDER BY total DESC;
 -- SUM: valor total do acervo
 SELECT SUM(preco) AS valor_total_acervo FROM livros;
 
--- AVG: preço médio dos livros
+-- AVG: preco medio dos livros
 SELECT ROUND(AVG(preco), 2) AS preco_medio FROM livros;
 
--- MAX: livro mais caro do acervo
-SELECT titulo, autor, preco AS preco_mais_alto
-FROM livros
-ORDER BY preco DESC
-LIMIT 1;
+-- MAX: maior preco no acervo
+SELECT MAX(preco) AS maior_preco FROM livros;
 
--- MIN: livro mais barato do acervo
-SELECT titulo, autor, preco AS preco_mais_baixo
+-- MAX com titulo e autor: linha completa do livro mais caro
+SELECT titulo, autor, preco AS maior_preco
 FROM livros
-ORDER BY preco ASC
-LIMIT 1;
+WHERE preco = (SELECT MAX(preco) FROM livros);
+
+-- MIN: menor preco no acervo
+SELECT MIN(preco) AS menor_preco FROM livros;
+
+-- MIN com titulo e autor: linha completa do livro mais barato
+SELECT titulo, autor, preco AS menor_preco
+FROM livros
+WHERE preco = (SELECT MIN(preco) FROM livros);
