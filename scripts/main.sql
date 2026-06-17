@@ -9,22 +9,25 @@ SOURCE /scripts/ddl/database.sql;
 -- 2. Criação das tabelas
 SOURCE /scripts/ddl/tables.sql;
 
--- 3. Constraints (checks e foreign keys)
+-- 3. Stored procedures
+SOURCE /scripts/ddl/procedures.sql;
+
+-- 4. Constraints (checks e foreign keys)
 SOURCE /scripts/constraints/check.sql;
 SOURCE /scripts/constraints/fk.sql;
 
--- 4. DCL (usuários, permissões)
+-- 5. DCL (usuários, permissões)
 SOURCE /scripts/dcl/user.sql;
 SOURCE /scripts/dcl/grant.sql;
 SOURCE /scripts/dcl/revoke.sql;
 SOURCE /scripts/dcl/flush.sql;
 
--- 5. DML (inserção de dados)
+-- 6. DML (inserção de dados)
 SOURCE /scripts/dml/usuarios.sql;
 SOURCE /scripts/dml/livros.sql;
 SOURCE /scripts/dml/emprestimos.sql;
 
--- 6. DQL (consultas)
+-- 7. DQL — consultas operacionais
 SOURCE /scripts/dql/livros.sql;
 SOURCE /scripts/dql/usuarios.sql;
 SOURCE /scripts/dql/emprestimos_atrasados.sql;
@@ -37,3 +40,12 @@ SOURCE /scripts/dql/livros_nunca_emprestados.sql;
 SOURCE /scripts/dql/usuarios_mais_atrasos.sql;
 SOURCE /scripts/dql/livros_emprestados_atualmente.sql;
 SOURCE /scripts/dql/media_dias_emprestimo.sql;
+
+-- 8. DQL — funções SQL (2º bimestre)
+SOURCE /scripts/dql/funcoes_texto.sql;
+SOURCE /scripts/dql/funcoes_numericas.sql;
+SOURCE /scripts/dql/funcoes_data.sql;
+
+-- 9. DQL — JOINs e relatórios (2º bimestre)
+SOURCE /scripts/dql/joins.sql;
+SOURCE /scripts/dql/relatorios.sql;
