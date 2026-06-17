@@ -11,6 +11,7 @@
 --   Secao 5  -- Relacionamento entre Tabelas
 --   Secao 6  -- Consultas com JOIN
 --   Secao 7  -- Relatorios e Indicadores
+--   Secao 9  -- Conclusao (dificuldades, aprendizados, melhorias)
 -- ================================================================
 
 -- ================================================================
@@ -559,3 +560,82 @@ FROM emprestimos e
 JOIN livros l ON e.id_livro = l.id_livro
 GROUP BY l.id_livro, l.titulo, l.autor
 ORDER BY vezes_emprestado DESC LIMIT 5;
+
+
+-- ================================================================
+-- SECAO 9 -- CONCLUSAO
+-- ================================================================
+
+-- ----------------------------------------------------------------
+-- Principais dificuldades encontradas
+-- ----------------------------------------------------------------
+-- 1. Hash de senhas em SQL puro
+--    Queriamos usar um KDF real (como PBKDF2 ou bcrypt), mas
+--    MariaDB/MySQL nao expoe essas funcoes via SQL. A solucao foi
+--    simular o conceito com SHA2 + salt + iteracoes manuais dentro
+--    de uma stored procedure.
+--
+-- 2. Diferenca entre MariaDB e MySQL
+--    O tipo UUID e nativo no MariaDB mas nao existe no MySQL --
+--    tivemos que usar CHAR(36). Alem disso, a sintaxe
+--    DEFAULT UUID() precisa de parenteses no MySQL 8.0:
+--    DEFAULT (UUID()). Descobrimos isso apenas ao testar.
+--
+-- 3. Datas dos emprestimos
+--    Para que as queries de "atrasados" e "pendentes" retornassem
+--    resultados reais durante a apresentacao, as datas precisaram
+--    ser calculadas com base na data atual (2026-06-17).
+--    Qualquer desvio deixaria os relatorios vazios.
+--
+-- 4. DCL e usuarios globais
+--    CREATE USER falha se o usuario ja existir globalmente no banco
+--    (os usuarios sobrevivem ao DROP DATABASE). Corrigimos com
+--    IF NOT EXISTS e DROP USER IF EXISTS no inicio do script.
+
+-- ----------------------------------------------------------------
+-- Conhecimentos adquiridos
+-- ----------------------------------------------------------------
+-- - Como estruturar um banco relacional com FK e integridade
+--   referencial (ON DELETE RESTRICT / ON UPDATE CASCADE).
+--
+-- - Hash de senhas em camadas: o que e salt, por que ele existe,
+--   o que e key stretching e por que importa contra ataques de
+--   forca bruta.
+--
+-- - Stored procedures com DELIMITER e variaveis locais (DECLARE).
+--
+-- - DCL na pratica: criar usuarios com privilegios diferentes
+--   (admin, atendente, estagiario) e usar REVOKE para ajuste fino.
+--
+-- - Diferenca entre MariaDB e MySQL -- mesmo sendo compatíveis,
+--   existem diferencas de tipos e sintaxe que exigem atencao.
+--
+-- - Funcoes de agregacao (COUNT, SUM, AVG, MAX, MIN) e como usar
+--   subquery para buscar a linha completa do resultado de MAX/MIN.
+--
+-- - JOINs na pratica: INNER, LEFT e RIGHT com casos reais --
+--   usuarios sem emprestimo, livros nunca emprestados.
+
+-- ----------------------------------------------------------------
+-- Melhorias futuras para o banco de dados do sistema
+-- ----------------------------------------------------------------
+-- 1. Hash real na aplicacao
+--    Mover o hash de senhas para a camada de aplicacao usando
+--    bcrypt ou Argon2. O banco so armazenaria o resultado final.
+--
+-- 2. Tabela de categorias
+--    Criar uma tabela categorias e vincular aos livros (N:N),
+--    permitindo filtrar o acervo por genero ou tema.
+--
+-- 3. Trigger de atualizacao de status
+--    Um evento agendado (EVENT) ou trigger poderia mudar
+--    automaticamente emprestimos de 'pendente' para 'atrasado'
+--    quando a data_devolucao_prevista passar sem devolucao.
+--
+-- 4. Indice em colunas de busca frequente
+--    Adicionar INDEX em livros.titulo, livros.autor e
+--    emprestimos.status para acelerar as consultas de relatorio.
+--
+-- 5. Historico de alteracoes (audit log)
+--    Uma tabela de log com trigger poderia registrar quem alterou
+--    cada emprestimo e quando, facilitando auditoria.
