@@ -1,20 +1,20 @@
 services:
   db:
-    container_name: mariadb_lib
-    image: mariadb:11.4.10
+    container_name: mysql_lib
+    image: mysql:8.0
     environment:
-      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
       - ./scripts:/scripts:z
       - ./scripts/init.sh:/docker-entrypoint-initdb.d/init.sh:z
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-uroot", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
 
 volumes:
-  mariadb_data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ./data
+  mysql_data:
