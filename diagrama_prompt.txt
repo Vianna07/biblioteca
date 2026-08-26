@@ -1,0 +1,57 @@
+Crie um diagrama de entidade-relacionamento (ER) com 3 tabelas de um sistema de biblioteca digital. Use o estilo de diagrama de banco de dados relacional, com cada tabela representada como um retângulo dividido em linhas, onde a primeira linha é o nome da tabela e as seguintes são as colunas com seus tipos.
+
+---
+
+TABELA: livros
+- id_livro (CHAR 36) — chave primária, gerado automaticamente via UUID
+- titulo (VARCHAR 255) — obrigatório
+- autor (VARCHAR 100) — obrigatório
+- editora (VARCHAR 100) — opcional
+- ano_lancamento (INT) — opcional
+- preco (DECIMAL 8,2) — obrigatório, padrão 0.00
+
+---
+
+TABELA: usuarios
+- id_usuario (CHAR 36) — chave primária, gerado automaticamente via UUID
+- nome (VARCHAR 100) — obrigatório
+- email (VARCHAR 100) — obrigatório, único
+- senha (VARCHAR 64) — obrigatório, armazena hash SHA-256
+- salt (VARCHAR 64) — obrigatório, usado para segurança do hash
+- created_at (TIMESTAMP) — obrigatório, preenchido automaticamente com data/hora atual
+
+---
+
+TABELA: emprestimos
+- id_emprestimo (CHAR 36) — chave primária, gerado automaticamente via UUID
+- id_livro (CHAR 36) — obrigatório, chave estrangeira que referencia livros.id_livro
+- id_usuario (CHAR 36) — obrigatório, chave estrangeira que referencia usuarios.id_usuario
+- data_saida (DATE) — obrigatório
+- data_devolucao_prevista (DATE) — obrigatório
+- data_devolucao_real (DATE) — opcional, preenchido quando o livro é devolvido
+- status (ENUM) — obrigatório, valores possíveis: pendente, atrasado, devolvido. Padrão: pendente
+
+---
+
+RELACIONAMENTOS:
+
+1. livros --> emprestimos
+   Um livro pode aparecer em vários empréstimos (1 para N).
+   A coluna emprestimos.id_livro referencia livros.id_livro.
+   Regra: não é possível excluir um livro que tenha empréstimos (ON DELETE RESTRICT).
+   Se o id do livro mudar, atualiza automaticamente nos empréstimos (ON UPDATE CASCADE).
+
+2. usuarios --> emprestimos
+   Um usuário pode ter vários empréstimos (1 para N).
+   A coluna emprestimos.id_usuario referencia usuarios.id_usuario.
+   Regra: não é possível excluir um usuário que tenha empréstimos (ON DELETE RESTRICT).
+   Se o id do usuário mudar, atualiza automaticamente nos empréstimos (ON UPDATE CASCADE).
+
+---
+
+OBSERVAÇÕES PARA O DIAGRAMA:
+- Marque as chaves primárias com PK e negrito ou ícone de chave.
+- Marque as chaves estrangeiras com FK.
+- Marque os campos obrigatórios com NOT NULL ou asterisco.
+- Marque o campo email de usuarios como UNIQUE.
+- As linhas de relacionamento devem sair das FK em emprestimos e apontar para as PK das tabelas referenciadas, com notação "um para muitos" (1 do lado da PK, N do lado da FK).

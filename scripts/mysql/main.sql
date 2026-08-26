@@ -23,3 +23,8 @@ SOURCE /scripts/dcl/flush.sql;
 SOURCE /scripts/dml/usuarios.sql;
 SOURCE /scripts/dml/livros.sql;
 SOURCE /scripts/dml/emprestimos.sql;
+
+-- Indices, views e functions do 3o bimestre (MySQL-especificos: CHAR(36))
+SOURCE /scripts/mysql/ddl/indexes.sql;
+SOURCE /scripts/mysql/ddl/views.sql;
+SOURCE /scripts/mysql/ddl/functions.sql;
