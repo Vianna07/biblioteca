@@ -1,2 +1,4 @@
 .env
 data/
+docs/4bim/documento_gerado.html
+__pycache__/

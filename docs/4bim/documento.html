@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Biblioteca Digital – 4º Bimestre</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right { content: counter(page); font: 9pt Inter, sans-serif; color: #888; }
+    @bottom-left { content: "Biblioteca Digital · Banco de Dados · 4º Bimestre"; font: 8pt Inter, sans-serif; color: #aaa; }
+  }
+  @page :first { @bottom-right { content: none; } @bottom-left { content: none; } }
+
+  :root {
+    --azul: #1f5fa8; --azul-claro: #e8f0fa; --cinza: #5b6470; --borda: #d5dbe3;
+    --verde: #1d7a46; --verde-claro: #e7f5ec; --vermelho: #b42318; --vermelho-claro: #fdecea;
+    --amarelo-claro: #fff6dd; --amarelo: #8a6100;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 10pt; line-height: 1.5; color: #1d232b; margin: 0; background: #fff; }
+  h1 { font-size: 20pt; color: var(--azul); margin: 0 0 6mm; padding-bottom: 2mm; border-bottom: 2px solid var(--azul); break-before: page; }
+  h2 { font-size: 14pt; color: var(--azul); margin: 8mm 0 3mm; break-after: avoid; }
+  h3 { font-size: 11.5pt; margin: 6mm 0 2mm; break-after: avoid; }
+  h4 { font-size: 10pt; margin: 4mm 0 1.5mm; color: var(--cinza); text-transform: uppercase; letter-spacing: .04em; break-after: avoid; }
+  p { margin: 0 0 2.5mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+  li { margin-bottom: 1mm; }
+  code { font-family: "JetBrains Mono", "JetBrainsMono NF", Consolas, monospace; font-size: 8.8pt; background: #f1f3f6; padding: 0 1mm; border-radius: 2px; }
+
+  /* capa */
+  .capa { height: 250mm; display: flex; flex-direction: column; justify-content: center; }
+  .capa .sup { color: var(--cinza); font-size: 11pt; letter-spacing: .08em; text-transform: uppercase; }
+  .capa h1.titulo { break-before: auto; border: 0; font-size: 30pt; line-height: 1.15; margin: 4mm 0; color: #14335c; }
+  .capa .sub { font-size: 14pt; color: var(--azul); margin-bottom: 14mm; }
+  .capa table { width: 120mm; }
+  .capa td { padding: 1.5mm 0; border-bottom: 1px solid var(--borda); vertical-align: top; }
+  .capa td:first-child { color: var(--cinza); width: 38mm; }
+
+  /* tabelas de texto */
+  table.t { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 9pt; }
+  table.t th, table.t td { border: 1px solid var(--borda); padding: 1.4mm 2mm; text-align: left; vertical-align: top; }
+  table.t th { background: var(--azul-claro); }
+  table.t tr { break-inside: avoid; }
+  .ficha th { width: 34mm; background: #f4f6f9; }
+
+  /* caixas */
+  .box { border-radius: 3px; padding: 2.5mm 3.5mm; margin: 3mm 0; break-inside: avoid; }
+  .box.dica { background: var(--azul-claro); border-left: 3px solid var(--azul); }
+  .box.atencao { background: var(--amarelo-claro); border-left: 3px solid #d9a400; }
+  .box.ideia { background: var(--verde-claro); border-left: 3px solid var(--verde); }
+  .box b.rot { display: block; margin-bottom: 1mm; }
+
+  /* codigo */
+  pre.sql { font-family: "JetBrains Mono", "JetBrainsMono NF", Consolas, monospace; font-size: 8pt; line-height: 1.42; background: #f7f8fa; border: 1px solid var(--borda); border-radius: 3px; padding: 2.5mm 3mm; margin: 1.5mm 0; white-space: pre-wrap; word-break: break-word; }
+  pre.codigo { background: #fbfcfd; }
+  .k { color: #1f4fbf; font-weight: 600; }
+  .s { color: #1d7a46; }
+  .c { color: #8a929c; font-style: italic; }
+  .v { color: #a3459b; }
+
+  /* blocos de execucao */
+  .bloco { margin: 3mm 0 5mm; }
+  .bloco-tit { font-weight: 600; font-size: 9.5pt; margin-bottom: 1mm; break-after: avoid; }
+  .tag { display: inline-block; font-family: "JetBrains Mono", monospace; font-size: 7.5pt; background: #14335c; color: #fff; padding: .3mm 1.6mm; border-radius: 2px; margin-right: 2mm; vertical-align: 1px; }
+  .grade { margin: 1.5mm 0 2mm; break-inside: avoid; }
+  .grade table { border-collapse: collapse; font-family: "JetBrains Mono", Consolas, monospace; font-size: 7.6pt; width: auto; max-width: 100%; }
+  .grade th { background: #e9edf2; border: 1px solid #c9d0d9; padding: .9mm 2mm; text-align: left; font-weight: 600; }
+  .grade td { border: 1px solid #dde2e8; padding: .7mm 2mm; white-space: nowrap; }
+  .grade td.longo { white-space: normal; overflow-wrap: anywhere; min-width: 38mm; }
+  .grade tbody tr:nth-child(even) td { background: #fafbfc; }
+  .grade .rodape { font-size: 7pt; color: #8a929c; margin-top: .5mm; }
+  .grade .null { color: #a0a7b0; font-style: italic; }
+  .grade .vazio { color: #a0a7b0; font-style: italic; }
+  .out { font-family: "JetBrains Mono", Consolas, monospace; font-size: 8pt; padding: 1.3mm 2.5mm; border-radius: 2px; margin: 1.5mm 0; break-inside: avoid; }
+  .out .ico { font-weight: 700; margin-right: 2mm; }
+  .out.erro { background: var(--vermelho-claro); color: var(--vermelho); border: 1px solid #f3c1bb; }
+  .out.ok { background: var(--verde-claro); color: var(--verde); border: 1px solid #bfe3cc; }
+
+  .explica { font-size: 9.3pt; color: #333b45; background: #fff; border-top: 1px dashed var(--borda); padding-top: 1.5mm; margin-top: -1mm; }
+  .fluxo { display: flex; flex-wrap: wrap; gap: 1.5mm; align-items: center; margin: 3mm 0; font-size: 8.6pt; }
+  .fluxo span.p { border: 1px solid var(--azul); background: var(--azul-claro); border-radius: 3px; padding: 1mm 2mm; }
+  .fluxo span.a { color: var(--azul); font-weight: 700; }
+  .sumario li { margin-bottom: .6mm; }
+  .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .pequeno { font-size: 8.6pt; color: var(--cinza); }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ CAPA -->
+<section class="capa">
+  <div class="sup">Trabalho de Banco de Dados · 4º Bimestre</div>
+  <h1 class="titulo">Biblioteca Digital</h1>
+  <div class="sub">Stored Procedures, Cursores e Triggers no MySQL</div>
+  <table>
+    <tr><td>Integrantes</td><td>Gustavo Vianna, Gabriel Cardoso, Rafael de Almeida</td></tr>
+    <tr><td>SGBD</td><td>MySQL 8.0 · MySQL Workbench</td></tr>
+    <tr><td>Scripts</td><td><code>scripts/4bim/</code></td></tr>
+  </table>
+</section>
+
+<!-- ============================================================ 1 PROJETO -->
+<h1>1. O projeto</h1>
+<p><b>Biblioteca Digital</b> controla o acervo e os empréstimos de uma biblioteca. Neste bimestre as regras de negócio passaram a ser garantidas pelo próprio banco.</p>
+<table class="t">
+  <tr><th>Tabela</th><th>Papel</th></tr>
+  <tr><td><code>usuarios</code></td><td>Leitores (localizados pelo e-mail).</td></tr>
+  <tr><td><code>livros</code></td><td>Acervo, com <code>qtd_exemplares</code> e <code>qtd_disponivel</code> (estoque mantido pelas triggers).</td></tr>
+  <tr><td><code>emprestimos</code></td><td>Empréstimos: datas e status (pendente / atrasado / devolvido).</td></tr>
+  <tr><td><code>log_auditoria</code> <i>(nova)</i></td><td>Histórico gravado pelas triggers de auditoria.</td></tr>
+</table>
+<h2>Principais regras</h2>
+<ul>
+  <li>Usuário com atraso ou com 3 empréstimos ativos não pega outro livro; prazo de 1 a 30 dias.</li>
+  <li>Só empresta se houver exemplar; o estoque baixa e volta sozinho.</li>
+  <li>Multa de R$ 1,50 por dia de atraso (máximo R$ 45,00).</li>
+  <li>Devolução não pode ser desfeita; empréstimo aberto não pode ser excluído.</li>
+  <li>Toda alteração em empréstimos e preços fica no log.</li>
+</ul>
+<table class="t">
+  <tr><th>Integrante</th><th>Responsável por</th></tr>
+  <tr><td>Gustavo Vianna</td><td>Empréstimo, resumo do usuário, triggers de INSERT</td></tr>
+  <tr><td>Gabriel Cardoso</td><td>Devolução, renovação, triggers de UPDATE</td></tr>
+  <tr><td>Rafael de Almeida</td><td>Relatório, cursor, triggers de DELETE e de livros, tabela de log</td></tr>
+</table>
+
+<!-- ============================================================ 2 PROCEDURES -->
+<h1>2. Stored procedures</h1>
+<table class="t">
+  <tr><th>Procedure</th><th>O que faz</th><th>Parâmetros</th></tr>
+  <tr><td><code>sp_registrar_emprestimo</code></td><td>Cadastra empréstimo com validação</td><td>IN e-mail, título, dias · OUT id</td></tr>
+  <tr><td><code>sp_registrar_devolucao</code></td><td>Dá baixa e calcula a multa</td><td>IN id · OUT multa</td></tr>
+  <tr><td><code>sp_relatorio_emprestimos_usuario</code></td><td>Relatório por período</td><td>IN e-mail, data início, data fim</td></tr>
+  <tr><td><code>sp_resumo_usuario</code></td><td>Diz se o leitor pode pegar livro</td><td>IN e-mail · 3× OUT</td></tr>
+  <tr><td><code>sp_renovar_emprestimo</code></td><td>Prorroga o prazo (máx. 14 dias)</td><td>IN id · INOUT dias</td></tr>
+</table>
+
+<h2>2.1 sp_registrar_emprestimo</h2>
+<p>Busca usuário e livro, testa as regras com <code>IF / ELSEIF</code> e, se algo falhar, para com <code>SIGNAL</code>. Se passar, faz o <code>INSERT</code> e devolve o id pelo <code>OUT</code>.</p>
+<!--CODE:sp_registrar_emprestimo-->
+<!--RUN:P1-valido-->
+<!--RUN:P1-depois-->
+<p class="explica">O estoque caiu 1 sem nenhum UPDATE na procedure: quem baixou foi a trigger.</p>
+<!--RUN:P1-inv-bloqueado-->
+
+<h2>2.2 sp_registrar_devolucao (OUT)</h2>
+<p>Calcula os dias de atraso e usa <code>CASE</code> para a multa, que volta pelo parâmetro <code>OUT</code>.</p>
+<!--CODE:sp_registrar_devolucao-->
+<!--RUN:P2-valido-->
+<!--RUN:P2-inv-repetido-->
+
+<h2>2.3 sp_relatorio_emprestimos_usuario</h2>
+<p>Consulta com parâmetros: devolve os empréstimos do leitor no período, com situação e multa.</p>
+<!--CODE:sp_relatorio_emprestimos_usuario-->
+<!--RUN:P3-valido-->
+<!--RUN:P3-inv-periodo-->
+
+<h2>2.4 sp_resumo_usuario (vários OUT)</h2>
+<p>Não devolve tabela: devolve três valores em variáveis (ativos, atrasados e situação).</p>
+<!--CODE:sp_resumo_usuario-->
+<!--RUN:P4-valido-->
+
+<h2>2.5 sp_renovar_emprestimo (INOUT)</h2>
+<p>O mesmo parâmetro entra com os dias pedidos e sai com os dias concedidos.</p>
+<!--CODE:sp_renovar_emprestimo-->
+<!--RUN:P5-valido-->
+<p class="explica">Pediu 20 dias, recebeu 14 (o limite).</p>
+
+<!-- ============================================================ 3 CURSOR -->
+<h1>3. Cursor – sp_atualizar_atrasos</h1>
+<p>Rotina diária: percorre, um a um, os empréstimos <i>pendentes</i> já vencidos, marca cada um como <i>atrasado</i> e calcula a multa.</p>
+<div class="fluxo">
+  <span class="p">DECLARE CURSOR</span><span class="a">→</span>
+  <span class="p">HANDLER NOT FOUND</span><span class="a">→</span>
+  <span class="p">OPEN</span><span class="a">→</span>
+  <span class="p">FETCH em LOOP</span><span class="a">→</span>
+  <span class="p">LEAVE</span><span class="a">→</span>
+  <span class="p">CLOSE</span>
+</div>
+<!--CODE:sp_atualizar_atrasos-->
+<!--RUN:C1-antes-->
+<!--RUN:C1-valido-->
+<!--RUN:C1-depois-->
+<p class="explica">Antes havia 3 pendentes vencidos; depois, nenhum. Cada linha processada gerou um registro no log.</p>
+
+<!-- ============================================================ 4 TRIGGERS -->
+<h1>4. Triggers</h1>
+<table class="t">
+  <tr><th>Trigger</th><th>Quando</th><th>O que faz</th></tr>
+  <tr><td><code>trg_emprestimos_before_insert</code></td><td>BEFORE INSERT</td><td>Valida prazo e exemplar disponível</td></tr>
+  <tr><td><code>trg_emprestimos_after_insert</code></td><td>AFTER INSERT</td><td>Baixa 1 exemplar</td></tr>
+  <tr><td><code>trg_emprestimos_before_update</code></td><td>BEFORE UPDATE</td><td>Impede reabrir; preenche data de devolução</td></tr>
+  <tr><td><code>trg_emprestimos_after_update</code></td><td>AFTER UPDATE</td><td>Devolve 1 exemplar</td></tr>
+  <tr><td><code>trg_emprestimos_before_delete</code></td><td>BEFORE DELETE</td><td>Impede excluir empréstimo aberto</td></tr>
+  <tr><td><code>trg_livros_before_update</code></td><td>BEFORE UPDATE (livros)</td><td>Impede preço negativo e estoque inválido</td></tr>
+  <tr><td><code>trg_auditoria_*</code> (4)</td><td>AFTER</td><td>Gravam OLD/NEW no log</td></tr>
+</table>
+<p>Os testes usam <code>INSERT</code>/<code>UPDATE</code>/<code>DELETE</code> direto, sem procedures: as regras valem para qualquer origem. O código completo das 10 triggers está em <code>04_triggers.sql</code>.</p>
+
+<h2>4.1 INSERT – validar, baixar estoque e auditar</h2>
+<!--CODE:trg_emprestimos_before_insert-->
+<!--CODE:trg_emprestimos_after_insert-->
+<!--RUN:T1-inv-estoque-->
+<!--RUN:T2-valido-->
+<p class="explica">Um único INSERT disparou três triggers: validação, baixa de estoque e log.</p>
+
+<h2>4.2 UPDATE – devolução</h2>
+<!--CODE:trg_emprestimos_before_update-->
+<!--CODE:trg_auditoria_emprestimos_update-->
+<!--RUN:T3-valido-->
+<p class="explica">O UPDATE só mudou o status; a data foi preenchida pela BEFORE e o estoque voltou pela AFTER.</p>
+<!--RUN:T3-inv-reabrir-->
+
+<h2>4.3 DELETE e livros</h2>
+<!--RUN:T4-inv-aberto-->
+<!--RUN:T5-inv-preco-->
+
+<!-- ============================================================ 5 LOG -->
+<h1>5. Tabela de auditoria (log)</h1>
+<!--CODE:log_auditoria-->
+<!--RUN:T6-log-->
+
+<!-- ============================================================ 6 ROTINA -->
+<h1>6. Rotina completa</h1>
+<p>Rafael pega <i>Dois Irmãos</i> (1 exemplar). Sofia tenta pegar o mesmo livro e é bloqueada. Rafael devolve e a Sofia consegue.</p>
+<div class="fluxo">
+  <span class="p">CALL procedure</span><span class="a">→</span>
+  <span class="p">BEFORE INSERT<br><span class="pequeno">valida</span></span><span class="a">→</span>
+  <span class="p">AFTER INSERT<br><span class="pequeno">baixa estoque</span></span><span class="a">→</span>
+  <span class="p">Auditoria<br><span class="pequeno">grava log</span></span>
+</div>
+<!--RUN:R3-->
+<!--RUN:R4-->
+<!--RUN:R5-->
+<!--RUN:R6-->
+<!--RUN:R8-->
+
+<!-- ============================================================ 7 SHOW -->
+<h1>7. Objetos no banco</h1>
+<!--RUN:S1 cols=Db,Name,Type,Created-->
+<!--RUN:S2 cols=Trigger,Event,Table,Timing-->
+
+</body>
+</html>
